@@ -6,42 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="javascript" href="./script.js">
+    <script type="text/javascript" src="./script.js"></script>
 </head>
 
 <body>
 
     <script>
-        function computerPlay() {
-            let choice = Math.floor(3 * Math.random());
-            switch (choice) {
-                case 0:
-                    return "Rock";
-                case 1:
-                    return "Paper";
-                case 2:
-                    return "Scissors";
-            }
-
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            playerSelection = playerSelection.toLowerCase();
-            computerSelection = computerSelection.toLowerCase();
-            if (playerSelection == "rock" && computerSelection == "paper") return "You Lose! Paper beats Rock";
-            else if (playerSelection == "paper" && computerSelection == "rock") return "You Win! Paper beats Rock";
-            else if (playerSelection == "scissors" && computerSelection == "rock") return "You Lose! Rock beats Scissors";
-            else if (playerSelection == "rock" && computerSelection == "scissors") return "You Win! Rock beats Scissors";
-            else if (playerSelection == "paper" && computerSelection == "scissors") return "You Lose! Scissors beats Paper";
-            else if (playerSelection == "scissors" && computerSelection == "paper") return "You Win! Scissors beats Paper";
-        }
-        //Write a NEW function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
-        function game() {
-            for (let i = 0; i < 5; i++) {
-                let playerSelection = prompt("Select an object");
-                playRound(playerSelection, computerPlay());
-            }
-        }
+        game();
     </script>
 
 </body>
