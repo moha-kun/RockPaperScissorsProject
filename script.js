@@ -25,11 +25,11 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let computerWin = 0;
     let playerWin = 0;
-    for (let i = 0; i < 5; i++) {
+    while ((playerWin + computerWin) < 5) {
         let playerSelection = prompt("Select an object", "");
         let result = playRound(playerSelection, computerPlay());
-        if (result.substring(0, 8) == "You Lose!") computerWin++;
-        if (result.substring(0, 7) == "You Win!") playerWin++;
+        if (result.substr(0, 9) == "You Lose!") computerWin++;
+        if (result.substr(0, 8) == "You Win!") playerWin++;
         console.log(result);
     }
     if (playerWin > computerWin) console.log(`You Win ${playerWin} - ${computerWin}`);
