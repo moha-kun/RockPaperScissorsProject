@@ -1,6 +1,7 @@
-const selections = Array.from(document.querySelectorAll(".selection"));
+const selections = Array.from(document.querySelectorAll(".select"));
 const showResult = document.querySelector(".result");
 const final = document.querySelector(".final");
+const repeat = document.querySelector(".repeat");
 let computerWin = 0;
 let playerWin = 0;
 
@@ -8,17 +9,23 @@ selections.forEach(selection => selection.addEventListener("click", (e) => {
     let playerSelect = e.target.getAttribute("data-key");
 
     let result = playRound(playerSelect, computerPlay());
-    showResult.textContent = result;
 
     if (result.substring(0, 9) === "You Lose!") computerWin++;
     if (result.substring(0, 8) === "You Win!") playerWin++;
-    console.log(playerWin, computerWin);
+    showResult.textContent = `You ${playerWin} - ${computerWin} Computer`;
 
+    if (playerWin > 4 || computerWin > 4) document.querySelector(".popUp").style.display = "grid";
     if (playerWin > computerWin) final.textContent = `You Win ${playerWin} - ${computerWin}`;
-    else if (playerWin < computerWin) final.textContent = `You Lose ${playerWin} - ${computerWin}`;
-    else final.textContent = `Draw ${playerWin} - ${computerWin}`;
+    else final.textContent = `You Died ${playerWin} - ${computerWin}`;
 
 }));
+
+repeat.addEventListener("click", () => {
+    computerWin = 0;
+    playerWin = 0;
+    showResult.textContent = `You ${playerWin} - ${computerWin} Computer`;
+    document.querySelector(".popUp").style.display = "none";
+})
 
 function computerPlay() {
     let choice = Math.floor(3 * Math.random());
