@@ -13,8 +13,8 @@
     display: grid;
     grid-template-columns: 20% 1fr 20%;
     grid-template-rows: 30% 1fr 7%;
-    background-color: black;
-    color: aliceblue;
+    background-color: white;
+    color: black;
 }
 
 .head {
@@ -25,6 +25,10 @@
     align-items: center;
     font-family: lacquer;
     font-size: xx-large;
+}
+
+.h21 {
+    text-align: center;
 }
 
 .main {
@@ -81,10 +85,10 @@
 
 .repeat {
     background-color: green;
-    transform: rotate(90deg);
+    padding: 8%;
     border-radius: 50%;
-    width: 10%;
-    height: auto;
+    transform: rotate(90deg);
+
 }
 
 .final {
